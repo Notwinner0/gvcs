@@ -15,9 +15,11 @@ import (
 	"os/user"
 	"path/filepath"
 	"regexp"
+	"runtime"
 	"sort"
 	"strconv"
 	"strings"
+	"syscall"
 	"time"
 
 	"github.com/akamensky/argparse"
@@ -319,6 +321,14 @@ func repoCreate(path string) (*GitRepository, error) {
 	_, err = repoDir(repo, true, "refs", "heads")
 	if err != nil {
 		return nil, err
+	}
+
+	// folder hidden on Windows
+	if runtime.GOOS == "windows" {
+		pathPtr, err := syscall.UTF16PtrFromString(repo.gitdir)
+		if err == nil {
+			_ = syscall.SetFileAttributes(pathPtr, syscall.FILE_ATTRIBUTE_HIDDEN)
+		}
 	}
 
 	// .git/description
