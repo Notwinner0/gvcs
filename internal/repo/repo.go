@@ -5,9 +5,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	"runtime"
 	"strings"
-	"syscall"
 
 	"github.com/bigkevmcd/go-configparser"
 )
@@ -166,12 +164,7 @@ func RepoCreate(path string) (*GitRepository, error) {
 	}
 
 	// folder hidden on Windows
-	if runtime.GOOS == "windows" {
-		pathPtr, err := syscall.UTF16PtrFromString(repo.Gitdir)
-		if err == nil {
-			_ = syscall.SetFileAttributes(pathPtr, syscall.FILE_ATTRIBUTE_HIDDEN)
-		}
-	}
+	hideGitDir(repo.Gitdir)
 
 	// .git/description
 	descPath, err := RepoFile(repo, false, "description")
