@@ -1,10 +1,13 @@
 <div align="center" markdown="1">
-  gvcs - a Go version control system
+  <h2>gvcs - a Go version control system</h2>
   <a href="https://github.com/Notwinner0/gvcs/actions"><img src="https://github.com/Notwinner0/gvcs/actions/workflows/go.yml/badge.svg?branch=main" alt="Build Status"></a>
   <a href="http://github.com/Notwinner0/gvcs/releases"><img src="https://img.shields.io/github/v/tag/Notwinner0/gvcs" alt="Version"></a>
   <a href="https://github.com/Notwinner0/gvcs?tab=MIT-1-ov-file#readme"><img src="https://img.shields.io/github/license/Notwinner0/gvcs" alt="License"></a>
   <a href="https://github.com/Notwinner0/gvcs/graphs/contributors"><img src="https://img.shields.io/github/contributors/Notwinner0/gvcs" alt="Contributors"></a>
   <a href="https://github.com/Notwinner0/gvcs/stargazers"><img src="https://img.shields.io/github/stars/Notwinner0/gvcs?style=flat" alt="Stars"></a>
+  <a href="https://codecov.io/github/Notwinner0/gvcs" > 
+ <img src="https://codecov.io/github/Notwinner0/gvcs/graph/badge.svg?token=QZOTUY8TW9"/> 
+ </a>
 </div>
 
 ---
